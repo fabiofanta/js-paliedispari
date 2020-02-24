@@ -22,13 +22,13 @@ if (isNaN(pariDispari)) {
                 console.log("Hai vinto!");
             }
         } else {
-            console.log("Scrivi un numero");
+            console.log("Hai scritto una parola. Scrivi un numero");
         }
     } else {
         console.log("Scrivi pari o dispari");
     }
 } else {
-    console.log("Hai scritto un numero. Scrivi pari o dispari ");
+    console.log("Hai scritto un numero. Scegli pari o dispari ");
 }
 
 
