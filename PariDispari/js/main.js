@@ -6,19 +6,31 @@ creo un numero RANDOM da 1-5              --------> ES: 10
 log     -------->   Spiacente, hai scelto PARI, ma la somma del tuo numero e del mio numero random ha restituito un numero DISPARI, hai perso!!!
 */
 
-var pariDispari = prompt("Pari o Dispari?");
+var pariDispari = prompt("Pari o Dispari?").toLowerCase();
 console.log(pariDispari);
-var numeroUtente = parseInt(prompt("Scegli un numero"));
-console.log(numeroUtente);
 
-
-var numero = generaRandomMinMax(1,5);
-console.log(numero);
-if ((numero + numeroUtente) % 2 != 0) {
-    console.log("Spiacente, hai scelto " + pariDispari + " ma la somma del tuo numero e del mio numero random ha restituito un numero DISPARI, hai perso!!!" );
+if (isNaN(pariDispari)) {
+    if (pariDispari == "pari" || pariDispari == "dispari") {
+        var numeroUtente = parseInt(prompt("Scegli un numero"));
+        console.log(numeroUtente);
+        if (!isNaN(numeroUtente)) {
+            var numero = generaRandomMinMax(1,5);
+            console.log(numero);
+            if ((numero + numeroUtente) % 2 != 0) {
+                console.log("Spiacente, hai scelto " + pariDispari + " ma la somma del tuo numero e del mio numero random ha restituito un numero DISPARI, hai perso!!!" );
+            } else {
+                console.log("Hai vinto!");
+            }
+        } else {
+            console.log("Scrivi un numero");
+        }
+    } else {
+        console.log("Scrivi pari o dispari");
+    }
 } else {
-    console.log("Hai vinto!");
+    console.log("Hai scritto un numero. Scrivi pari o dispari ");
 }
+
 
 
 function generaRandomMinMax(min,max) { //funzione che genera un numero random tra due valori dati in ingresso MIN e Max
